@@ -1,9 +1,13 @@
 # Midterm
 
-## Static Files 
-* Static files, by definition, are plain files that aren't dynamically generated. 
-* Can be served over a CDN 
-* 
+## Static 
+* Files:
+	* Static files, by definition, are plain files that aren't dynamically generated 
+	* Can be served over a CDN 
+	* Think: HTML, CSS, .js files 
+* Serving:
+	* Static vs Dynamic: static serving is just sending plain old files in response to a request.  Dynamic serving builds a new response for every request.
+
 ## Cache
 * Allows quicker retrieval of resources
 * Remember, the further we get from the processor, the slower things are
@@ -22,7 +26,11 @@ Expires: 0
 	* We can use our Python code to cache data from the datastore
 	* We can use a memory cache to share resources across VMs
 
-## DNS
+## DNS / How the Internet functions
+* DNS: The Domain Name System.  Translates Domain Names to IP Addresses.
+* IP Address: A numerical label (in 4 octets) assigned to each device in an Internet Protocol network.
+* DNS Balancing: route requests to different IP addresses in order to spread out load
+* Load Balancing: distributing requests to different servers in order to spread out load
 
 ## Versions
 * Benefits: 
@@ -30,12 +38,14 @@ Expires: 0
 	* Enables experimentation with different site features
 	* Consistent UX
 
-
 ## Virtual Machines
-
-## Asyncronous 
-
-## HTTP
+* Why?
+	* Flexibility
+	* Enforcement of constraints
+	* Ease of replication
+	* Division of a single machine (to allow time slicing / sharing)
+	* Combination of many distinct physical machines into a single machine
+	* Configuration options
 
 ## Data Management
 * Normalization
@@ -198,10 +208,6 @@ Ancestor: an "owner" for the entity
 probably won't be needed  by your projects
 Descendant: entities "owned" by an ancestor
 
-## How things operate (HTML, CSS, JS)
-
-## Events
-
 ## DOM
 * Manipulating the DOM
 	* `var element = document.getElementById("SomeID");`
@@ -224,11 +230,6 @@ document.getElementById("SomeElementID").onclick = function() {
 	* onmouseenter: when the mouse cursor enters the element
 	* onmouseleave: when the mouse cursor exits the element
 
-		
-## Data Residency 
-
-## Globle Scale
-
 ## HTTP Stuff / Status codes
 * 401: Unauthorized
 * 405: Method Not Allowed
@@ -244,6 +245,8 @@ document.getElementById("SomeElementID").onclick = function() {
 	* PUT
 	* DELETE
 
+## Random
+* Online Processing vs Batch Processing: some information is computed before a request is received as part of batch processing operations.  Online processing computes information as it is requested.
 
 ## Lecture Slides
 * https://docs.google.com/presentation/d/1vihnHBeovazPzePKEU_c1AR1w4N1BDVKNPoYrAsEwKc/edit?usp=sharing
@@ -259,3 +262,9 @@ document.getElementById("SomeElementID").onclick = function() {
 * JSON & AJAX: https://docs.google.com/presentation/d/1RKLPxAjWq_vhAw6e1dioRFMDLTWg_xLEfu9qvp_6EUw/edit?usp=sharing
 * Templates: https://docs.google.com/presentation/d/1K-fqqYvliVyjOj1_0trrnNEeisVi6VxlgLhGHEe6jMM/edit?usp=sharing
 * https://docs.google.com/presentation/d/1o_AD9YeOnM8lUko3bqFHTolf8ptx1SFvwSIFZP8qxvE/edit?usp=sharing
+
+## Asyncronous 
+		
+## Data Residency 
+
+## Globle Scale
