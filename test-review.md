@@ -1,8 +1,35 @@
 # Midterm
 
+## Static Files 
+* Static files, by definition, are plain files that aren't dynamically generated. 
+* Can be served over a CDN 
+* 
 ## Cache
+* Allows quicker retrieval of resources
+* Remember, the further we get from the processor, the slower things are
+* Can cache from memory, disk, *or* from a remote server
+* To avoid, set headers:
+```
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
+Expires: 0
+```
+* Think of all the ways we can do this in a web environment:
+	* Cache data from the server in JavaScript running in the browser
+	* Use Local Storage to store data in the browser
+	* The browser can cache static resources to reduce network traffic
+	* CDNs can cache and replicate static resources
+	* We can use our Python code to cache data from the datastore
+	* We can use a memory cache to share resources across VMs
 
 ## DNS
+
+## Versions
+* Benefits: 
+	* Easier to roll back if errors are encountered
+	* Enables experimentation with different site features
+	* Consistent UX
+
 
 ## Virtual Machines
 
@@ -115,7 +142,27 @@ function sendJsonRequest(targetUrl, parameters, callbackFunction) {
    * `import json`
 
 ## Design Patterns
-* MVC
+* Solve common problems
+* Programming language independent
+* Generally accepted, historically proven approach to solution
+* Communicate best practices
+* n-Tier Systems
+	* Many applications are single tier; there is one system or component running in the application.
+	* 2-tier systems usually separate some part of the application from the other; an application may use a database, or the application may have a UI component separate from the rest of the application.
+	* 3-tier systems usually consist of 3 tiers - **data model**, **business logic**, and **presentation logic**.
+* All of this inter-system communication can be expensive. Remember, processors are fast, memory is less fast, storage is even slower, and networking / intermachine communication is slowest of all.
+* Why, then, do we pursue this approach?
+	* Separation of concerns - it allows us to build more focused systems.
+	* Testing - tiers can be tested independently.
+	* Scaling - we can add resources to provide more capacity to specific tiers in our application as needed.
+* Example of 3-tiered system = MVC -> Model-View-Controller Design Pattern
+
+### MVC
+* We often build systems using the 3-tier approach of Model-View-Controller.
+* The "model" is the data model itself; how we store the information for the application.
+* The "view" is the user interface for the application; how users interact with it.
+* The "controller" connects the two, supplying data to the view, and reading / transforming the data or leveraging the business logic for the application.
+
 
 ## RDBMS (Relational Databased) - ACID
 * ACID
@@ -153,15 +200,50 @@ Descendant: entities "owned" by an ancestor
 
 ## How things operate (HTML, CSS, JS)
 
-## Static vs. dynamic
-
 ## Events
 
 ## DOM
+* Manipulating the DOM
+	* `var element = document.getElementById("SomeID");`
+	* `element.innerHTML = 'Whatever you want it to be';`
+* Handle clicks
+	* `<button onclick="someFunction();">Click This</button>`
+	* `<input type="button" onclick="someOtherFunction();" value="Click Here">`
+	* This can also be done in JavaScript:
+```	 
+document.getElementById("SomeElementID").onclick = function() {
+	// your function body
+};
+```
 
+* Common events
+	* onblur: when an element loses focus
+	* onchange: when an element changes
+	* onfocus: when an element gains focus
+	* onload: when an element is loaded in the page
+	* onmouseenter: when the mouse cursor enters the element
+	* onmouseleave: when the mouse cursor exits the element
+
+		
 ## Data Residency 
 
 ## Globle Scale
+
+## HTTP Stuff / Status codes
+* 401: Unauthorized
+* 405: Method Not Allowed
+* 408: Request Timeout
+* 501: Not Implemented
+* 504: Gateway Timeout
+* Uniform Resource Locator = URL
+* Protocol + domain + path + resource
+* HTTP request methods:
+	* GET (parameters on the URL, as in the previous URL slide)
+	* POST (parameters are within the body of the HTTP request)
+	* HEAD
+	* PUT
+	* DELETE
+
 
 ## Lecture Slides
 * https://docs.google.com/presentation/d/1vihnHBeovazPzePKEU_c1AR1w4N1BDVKNPoYrAsEwKc/edit?usp=sharing
